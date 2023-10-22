@@ -1,0 +1,102 @@
+# Documentation for the Symmetric Non-negative Matrix Factorization (SymNMF) Code
+
+## Introduction
+This document provides documentation for the C code implementing Symmetric Non-negative Matrix Factorization (SymNMF). SymNMF is a technique used in data analysis and linear algebra to factorize a given non-negative input matrix into two lower-dimensional matrices. In this code, SymNMF is applied to a given dataset, and the resulting matrix is printed in a specific format. 
+
+The code performs the following steps:
+1. Reading a dataset from a text file.
+2. Normalizing the dataset and calculating the symmetric matrix (sym), diagonal degree matrix (ddg), and a normalized matrix (norm).
+3. Applying SymNMF to factorize the normalized matrix into two matrices.
+4. Printing the resulting matrix in the specified format.
+
+## Code Structure
+The code consists of several functions and a `main` function for executing the SymNMF process. Here's an overview of the key functions and their roles:
+
+### `create_output`
+```c
+void create_output(double **vectors_array, int num_of_clusters, int dim)
+```
+This function takes a 2D array, `vectors_array`, representing a matrix and prints its elements in a specified format. It separates the values with commas and prints each row on a new line.
+
+### `free_matrices`
+```c
+void free_matrices(double **array, int num)
+```
+This function frees dynamically allocated memory for a 2D array of doubles. It is used to release memory after matrix operations.
+
+### `euclidean_distance`
+```c
+double euclidean_distance(double *v1, double *v2, int dim)
+```
+This function calculates the Euclidean distance between two vectors represented as arrays of doubles.
+
+### `sym`
+```c
+double **sym(double **X, int N, int dim)
+```
+This function computes the symmetric matrix of the given data matrix.
+
+### `ddg`
+```c
+double **ddg(double **X, int N, int dim)
+```
+This function calculates the diagonal degree matrix (ddg) for a given matrix.
+
+### `compute_D_inv_half`
+```c
+double **compute_D_inv_half(double **A, int N)
+```
+This function computes the inverse square root of the diagonal degree matrix (D_inv_half).
+
+### `matrix_multiply`
+```c
+double **matrix_multiply(double **A, double **B, int rowsA, int colsA, int colsB)
+```
+This function performs matrix multiplication between two matrices and returns the result as a new matrix.
+
+### `norm`
+```c
+double **norm(double **X, int N, int dim)
+```
+This function performs matrix normalization by computing the normalized matrix `W` using the symmetric matrix and the diagonal degree matrix.
+
+### `create_transpose`
+```c
+double **create_transpose(double **M, int row, int col)
+```
+This function creates the transpose of a given matrix `M`.
+
+### `updateH`
+```c
+double **updateH(double **H, double **W, int iter, double b, double eps, int n, int k)
+```
+This function updates the matrix `H` iteratively based on SymNMF. It returns the updated matrix `H`.
+
+### `symnmf`
+```c
+double **symnmf(double **X, double **H, int n, int d, int iter, double b, double eps, int k)
+```
+This function combines various operations to perform Symmetric Non-negative Matrix Factorization (SymNMF) on a given data matrix `X`. It returns the resulting matrix `H`.
+
+### `main`
+```c
+int main(int argc, char **argv)
+```
+The `main` function is the entry point of the program. It reads command-line arguments, loads data from a text file, performs the specified operation (sym, ddg, or norm), and prints the result. It also manages memory allocation and releases resources upon program completion.
+
+## Usage
+To run the program, execute it from the command line with two command-line arguments: the desired operation (sym, ddg, or norm) and the path to the input text file. The code reads the data from the file, performs the specified operation, and prints the result to the console.
+
+Here is an example command to run the code:
+```bash
+./your_program_name sym input_data.txt
+```
+
+## Error Handling
+The code includes basic error handling. It checks if the correct number of command-line arguments is provided and if the input file can be opened successfully. If any errors occur, an error message is displayed, and the program exits with a non-zero status code.
+
+## Memory Management
+The code efficiently manages memory by dynamically allocating and freeing memory for matrices to prevent memory leaks.
+
+## Conclusion
+This documentation provides an overview of the C code for performing Symmetric Non-negative Matrix Factorization (SymNMF). The code can be used to process datasets and apply SymNMF to factorize them into two lower-dimensional matrices. Users can specify the operation (sym, ddg, or norm) and provide an input dataset in a text file. The code performs the specified operation and prints the result to the console.

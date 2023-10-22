@@ -10,6 +10,7 @@ graph clustering. In Proceedings of the 2012 SIAM International Conference on Da
 2012.
 
 In this project there are the following files:
+
 symnmf.py:
 Python interface of the code with the following requirements (user CMD arguments):
 (a) k (int, < N): Number of required clusters.

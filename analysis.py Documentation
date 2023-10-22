@@ -45,8 +45,6 @@ Note:
 - The code checks the validity of the command-line arguments and data file before proceeding.
 - Ensure that the required Python libraries (NumPy, SymNMF, scikit-learn) are installed before running the code.
 
-Author: Yuval Shmaryahu 
-Date: 22.10.23
 """
 
 # Import required libraries
@@ -66,3 +64,13 @@ np.random.seed(0)
 # Main function
 if __name__ == "__main__":
     main()
+
+
+Author:
+   - Yuval Shmarayhu
+
+Date:
+   - 22.10.23
+
+Disclaimer:
+   - This code is provided as-is, and any modifications or improvements are the responsibility of the user.

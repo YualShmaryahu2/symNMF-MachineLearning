@@ -98,5 +98,15 @@ The code includes basic error handling. It checks if the correct number of comma
 ## Memory Management
 The code efficiently manages memory by dynamically allocating and freeing memory for matrices to prevent memory leaks.
 
+
+Author:
+   - Yuval Shmarayhu
+
+Date:
+   - 22.10.23
+
+Disclaimer:
+   - This code is provided as-is, and any modifications or improvements are the responsibility of the user.
+
 ## Conclusion
 This documentation provides an overview of the C code for performing Symmetric Non-negative Matrix Factorization (SymNMF). The code can be used to process datasets and apply SymNMF to factorize them into two lower-dimensional matrices. Users can specify the operation (sym, ddg, or norm) and provide an input dataset in a text file. The code performs the specified operation and prints the result to the console.

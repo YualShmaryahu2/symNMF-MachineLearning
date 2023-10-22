@@ -1,0 +1,68 @@
+"""
+K-Means Clustering with SymNMF Initialization Documentation
+
+This script performs K-means clustering on a given dataset using an initialization technique called SymNMF. The code accepts the number of clusters (K) and a data file as command-line arguments.
+
+Usage:
+    python kmeans_with_symnmf.py K datafile.txt
+
+Requirements:
+    - Python 3.x
+    - NumPy
+    - SymNMF (mysymnmfsp module)
+    - scikit-learn (sklearn)
+
+This script initializes K-means clustering using SymNMF, a non-negative matrix factorization algorithm, and then runs K-means on the data for a specified number of iterations.
+
+Functions:
+1. `avg_matrix(M)`: Calculates the average value of elements in a matrix M.
+
+2. `calc_distance(vector1, vector2)`: Calculates the Euclidean distance between two vectors.
+
+3. `adjust_vectors_per_iteration(cluster, vector, array_of_centroids, index_table)`: Assigns vectors to clusters based on the closest centroid for each vector.
+
+4. `assign_vectors_for_index_table(array_of_vectors, array_of_centroids, k, index_table)`: Assigns vectors to clusters based on the closest centroid for each vector and updates the index table.
+
+5. `calc_new_cent(clusters_table)`: Calculates new centroids for the clusters.
+
+6. `update_array_of_centroids(clusters_table, array_of_centroids, k)`: Updates the array of centroids based on the current clusters table.
+
+7. `check_table_of_centroid(array_of_centroids)`: Checks if the distance requirement for centroid convergence is fulfilled.
+
+8. `Kmeans(K, iter, input_data)`: Performs K-means clustering with SymNMF initialization. It takes the number of clusters (K), the number of iterations (iter), and the input data.
+
+9. `main()`: The main function that reads command-line arguments, loads data, initializes SymNMF, and performs K-means clustering with SymNMF initialization.
+
+Usage:
+1. Provide the number of clusters (K) and a data file as command-line arguments.
+2. The code will initialize K-means clustering using SymNMF, perform K-means clustering with a maximum of 300 iterations, and print the silhouette scores for both methods (SymNMF and K-means).
+
+Example Usage:
+    python kmeans_with_symnmf.py 3 datafile.txt
+
+Note:
+- SymNMF initialization is used to provide a better initial state for K-means.
+- The code checks the validity of the command-line arguments and data file before proceeding.
+- Ensure that the required Python libraries (NumPy, SymNMF, scikit-learn) are installed before running the code.
+
+Author: Yuval Shmaryahu 
+Date: 22.10.23
+"""
+
+# Import required libraries
+import math
+import sys
+from sklearn.metrics import silhouette_score
+import numpy as np
+import mysymnmfsp
+
+# Seed the random number generator
+np.random.seed(0)
+
+# Define utility functions and the main K-means function
+
+# ... (Include function descriptions here)
+
+# Main function
+if __name__ == "__main__":
+    main()

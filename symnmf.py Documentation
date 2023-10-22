@@ -54,5 +54,15 @@ It validates the third argument as a valid input data file (CSV format).
 Initialization and Factorization
 Depending on the selected factorization method, the script initializes the factorization with random values within certain constraints, computes the factorization, and prints the results.
 
+
+Author:
+   - Yuval Shmarayhu
+
+Date:
+   - 22.10.23
+
+Disclaimer:
+   - This code is provided as-is, and any modifications or improvements are the responsibility of the user.
+
 Running the Script
 To use the script, execute it from the command line with the correct number of arguments, specifying the number of clusters, the factorization method, and the input data file.
